@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="SimilarityTBs" TargetType="TextBox">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black"  Direction="310" ShadowDepth="3" Opacity="0.2"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="QuestionAndTheme" TargetType="TextBox" BasedOn="{StaticResource SimilarityTBs}">
+        <Setter Property="Margin" Value="65, 5, 105, 5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="2,0,0,2" BorderBrush="Gray" BorderThickness="1"/>
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Answer" TargetType="TextBox" BasedOn="{StaticResource SimilarityTBs}">
+        <Setter Property="Margin" Value="35, 21, 35, 21"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="2" BorderBrush="Gray" BorderThickness="1"/>
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

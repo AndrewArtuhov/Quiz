@@ -1,0 +1,78 @@
+﻿<Window x:Class="Quiz.WindowCreateThemes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Quiz"
+      mc:Ignorable="d" 
+    Title="GameWindow" Height="400" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary >
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="Resources/StyleControlsBT.xaml"/>
+                <ResourceDictionary Source="Resources/StyleControlsTB.xaml"/>
+                <ResourceDictionary Source="Resources/StyleControlsL.xaml"/>
+                <ResourceDictionary Source="Resources/StyleContolsCheckBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="CREAT QIZE" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="65" HorizontalAlignment="Center" Foreground="#FF33628E"/>
+        
+        <Label Name="WarmingThemeL" Content="This theme already exists" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" FontSize="7" VerticalAlignment="Center" Foreground="Red"/>
+        <Label Name="WarmingQuestionL" Content="This field should not be empty" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" FontSize="7" VerticalAlignment="Center" Foreground="Red"/>
+        <Label Name="WarmingAnswerL_1" Content="This field should not be empty" Grid.Row="6" Grid.Column="1" FontSize="7" Foreground="Red" Margin="0,5,60,0"/>
+        <Label Name="WarmingAnswerL_2" Content="This field should not be empty" Grid.Row="7" Grid.Column="1" FontSize="7" Foreground="Red" Margin="0,5,60,0"/>
+        <Label Name="WarmingAnswerL_3" Content="This field should not be empty" Grid.Row="6" Grid.Column="2" FontSize="7" Foreground="Red" Margin="0,5,60,0"/>
+        <Label Name="WarmingAnswerL_4" Content="This field should not be empty" Grid.Row="7" Grid.Column="2" FontSize="7" Foreground="Red" Margin="0,5,60,0"/>
+        <Label Name="WarmingCondition_1" Content="~" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
+        <Label Name="WarmingCondition_2" Content="~" Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
+        <Label Name="WarmingCondition_3" Content="~" Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
+        <Label Name="WarmingCondition_4" Content="~" Grid.Row="6" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
+
+        <Label Content="Enter name Question" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Enter name Theme" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
+        <Label Content="Enter name Answer*" FontSize="10" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+        <Label Content="*Select the correct answer in CheckBox" FontSize="10" Grid.Row="7" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center"/>
+        
+        <TextBox x:Name="NameThemeTB" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource QuestionAndTheme}"/>
+        <TextBox x:Name="NameQuestionTB" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource QuestionAndTheme}" />
+        
+        <Button x:Name="infoBT" Content="i"  Grid.Column="3" Grid.Row="0" Style="{DynamicResource InfoBT}"/>
+        <Button x:Name="OkeyQuestionBT" Grid.Column="2" Grid.Row="4" Style="{DynamicResource OkeyBT}" Margin="123, 5, 50, 5.5"/>
+        <Button x:Name="OkeyThemeTB" Grid.Column="2" Grid.Row="2" Style="{DynamicResource OkeyBT}" Margin="123, 5, 50, 5.5"/>
+
+        <CheckBox x:Name="ConditionAnswer_1" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2"/>
+        <CheckBox x:Name="ConditionAnswer_2" Grid.Row="6" Grid.Column="1" Grid.RowSpan="2"/>
+        <CheckBox x:Name="ConditionAnswer_3" Grid.Row="5" Grid.Column="2" Grid.RowSpan="2"/>
+        <CheckBox x:Name="ConditionAnswer_4" Grid.Row="6" Grid.Column="2" Grid.RowSpan="2"/>
+        
+        <TextBox x:Name="AnswerTB_1" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" Style="{DynamicResource Answer}"/>
+        <TextBox x:Name="AnswerTB_2" Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" Style="{DynamicResource Answer}"/>
+        <TextBox x:Name="AnswerTB_3" Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource Answer}"/>
+        <TextBox x:Name="AnswerTB_4" Grid.Row="6" Grid.Column="2" Grid.RowSpan="2" Style="{DynamicResource Answer}"/>
+
+        
+        
+    </Grid>
+</Window>
