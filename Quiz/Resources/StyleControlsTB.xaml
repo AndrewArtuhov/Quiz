@@ -42,6 +42,10 @@
         </Setter>
     </Style>
 
+    <Style x:Key="Time" TargetType="TextBox" BasedOn="{StaticResource Answer}">
+        <Setter Property="Margin" Value="15, 5, 190, 5"/>
+    </Style>
+
 
 
 </ResourceDictionary>

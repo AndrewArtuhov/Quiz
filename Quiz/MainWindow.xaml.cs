@@ -16,6 +16,14 @@ namespace Quiz
         public MainWindow()
         {
             InitializeComponent();
+            this.ConectionDataBase();
+            this.OkeyBT.Click += OkeyBT_Click;
+            this.CreateBT.Click += CreateBT_Click;
+            this.SelectTehmeCB.KeyDown += SelectTehmeCB_KeyDown;
+        }
+
+        private void ConectionDataBase()
+        {
             List<Theme> themes;
             using (QuestionContex db = new QuestionContex())
             {
@@ -24,9 +32,6 @@ namespace Quiz
             }
             SelectTehmeCB.ItemsSource = themes.Select(t => t.Name);
             SelectTehmeCB.SelectedIndex = 0;
-            this.OkeyBT.Click += OkeyBT_Click;
-            this.CreateBT.Click += CreateBT_Click;
-            this.SelectTehmeCB.KeyDown += SelectTehmeCB_KeyDown;
         }
 
         private void SelectTehmeCB_KeyDown(object sender, KeyEventArgs e)
@@ -47,6 +52,7 @@ namespace Quiz
             var windowGreateT = new WindowCreateThemes();
             windowGreateT.ShowDialog();
             this.Show();
+            this.ConectionDataBase();
         }
 
         private void OkeyBT_Click(object sender, RoutedEventArgs e)

@@ -32,13 +32,8 @@ namespace Quiz
         public bool IsTextBoxEmpty()
         {
             bool textNormal = true;
-            string nameQuestionTB = NameQuestionTB.Text.Trim();
-            string answerTB_1 = AnswerTB_1.Text.Trim();
-            string answerTB_2 = AnswerTB_2.Text.Trim();
-            string answerTB_3 = AnswerTB_3.Text.Trim();
-            string answerTB_4 = AnswerTB_4.Text.Trim();
 
-            if (nameQuestionTB == string.Empty)
+            if (NameQuestionTB.Text == string.Empty)
             {
                 textNormal = false;
                 WarmingQuestionL.Opacity = 1;
@@ -46,7 +41,7 @@ namespace Quiz
             else
                 WarmingQuestionL.Opacity = 0;
 
-            if (answerTB_1 == string.Empty)
+            if (AnswerTB_1.Text == string.Empty)
             {
                 textNormal = false;
                 WarmingAnswerL_1.Opacity = 1;
@@ -54,7 +49,7 @@ namespace Quiz
             else
                 WarmingAnswerL_1.Opacity = 0;
 
-            if (answerTB_2 == string.Empty)
+            if (AnswerTB_2.Text == string.Empty)
             {
                 textNormal = false;
                 WarmingAnswerL_2.Opacity = 1;
@@ -62,7 +57,7 @@ namespace Quiz
             else
                 WarmingAnswerL_2.Opacity = 0;
 
-            if (answerTB_3 == string.Empty)
+            if (AnswerTB_3.Text == string.Empty)
             {
                 textNormal = false;
                 WarmingAnswerL_3.Opacity = 1;
@@ -70,13 +65,22 @@ namespace Quiz
             else
                 WarmingAnswerL_3.Opacity = 0;
 
-            if (answerTB_4 == string.Empty)
+            if (AnswerTB_4.Text == string.Empty)
             {
                 textNormal = false;
                 WarmingAnswerL_4.Opacity = 1;
             }
             else
                 WarmingAnswerL_4.Opacity = 0;
+            int number;
+            bool isNumber = int.TryParse(TimeTB.Text, out number);
+            if (TimeTB.Text == string.Empty || !isNumber)
+            {
+                textNormal = false;
+                WarmingTime.Opacity = 1;
+            }
+            else
+                WarmingTime.Opacity = 0;
 
             if (ConditionAnswer_1.IsChecked == false && ConditionAnswer_2.IsChecked == false && ConditionAnswer_3.IsChecked == false && ConditionAnswer_4.IsChecked == false)
             {
@@ -107,6 +111,7 @@ namespace Quiz
                 AnswerTB_2.Text = string.Empty;
                 AnswerTB_3.Text = string.Empty;
                 AnswerTB_4.Text = string.Empty;
+                TimeTB.Text = string.Empty;
                 ConditionAnswer_1.IsChecked = false;
                 ConditionAnswer_2.IsChecked = false;
                 ConditionAnswer_3.IsChecked = false;
@@ -126,7 +131,7 @@ namespace Quiz
             }
             Timer timer = new Timer
             {
-                Time = 5
+                Time = Convert.ToInt32(TimeTB.Text)
             };
             Question question = new Question
             {
@@ -166,6 +171,7 @@ namespace Quiz
         {
             WarmingThemeL.Opacity = 0;
             WarmingQuestionL.Opacity = 0;
+            WarmingTime.Opacity = 0;
 
             WarmingAnswerL_1.Opacity = 0;
             WarmingAnswerL_2.Opacity = 0;

@@ -49,14 +49,17 @@
         <Label Name="WarmingCondition_2" Content="~" Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
         <Label Name="WarmingCondition_3" Content="~" Grid.Row="5" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
         <Label Name="WarmingCondition_4" Content="~" Grid.Row="6" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="0,30,0,0"  FontSize="10" Foreground="Red" />
+        <Label Name="WarmingTime" Content="~" Grid.Row="4" Grid.Column="1" Grid.RowSpan="2" Margin="0,20, 180,0"  FontSize="10" Foreground="Red" />
 
         <Label Content="Enter name Question" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label Content="Enter name Theme" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
         <Label Content="Enter name Answer*" FontSize="10" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
         <Label Content="*Select the correct answer in CheckBox" FontSize="10" Grid.Row="7" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center"/>
-        
+        <Label Content="s" FontSize="10" Grid.Row="4" Grid.Column="1" Margin="10, 5, 145, 5"/>
+
         <TextBox x:Name="NameThemeTB" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource QuestionAndTheme}"/>
         <TextBox x:Name="NameQuestionTB" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{DynamicResource QuestionAndTheme}" />
+        <TextBox x:Name="TimeTB" Grid.Row="4" Grid.Column="1" Style="{DynamicResource Time}"/>
         
         <Button x:Name="infoBT" Content="i"  Grid.Column="3" Grid.Row="0" Style="{DynamicResource InfoBT}"/>
         <Button x:Name="OkeyQuestionBT" Grid.Column="2" Grid.Row="4" Style="{DynamicResource OkeyBT}" Margin="123, 5, 50, 5.5"/>
